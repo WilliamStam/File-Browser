@@ -4,8 +4,24 @@ $cfg = array();
 require_once('_include.php');
 $return = array();
 
+$GLOBALS['CFG'] = $cfg;
 define('TIME_LIMIT', 30);
 
+function replaceSensitive($str) {
+	$cfg = $GLOBALS['CFG'];
+	$replace = array(
+			$cfg['GIT']['username'],
+			$cfg['GIT']['password'],
+			
+	);
+	
+	foreach($replace as $item){
+		$str = str_replace($item,str_repeat('*', strlen($item)),$str);
+	}
+	
+	
+	return $str;
+}
 
 ob_start();
 ?>
@@ -14,31 +30,33 @@ ob_start();
 <head>
 	<meta charset="utf-8">
 	<meta name="robots" content="noindex">
-	<title>Simple PHP Git deploy script</title>
+	<title>Update Script</title>
 	<link rel="stylesheet" href="/ui/style.css">
 	<style>
 		.error { color: #c33; }
 		.prompt { color: #6be234; }
 		.command { color: #729fcf; }
 		.output { color: #999; }
+		.panel-body:empty {
+			display:none;
+		}
 	</style>
 </head>
 <body>
 
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		Checking the environment
+	</div>
+	<div class="panel-body">
+		
+		
+		
+		<div>Running as <b><?php echo trim(shell_exec('whoami')); ?></b>.</div>
+		
 
-<h1>Checking the environment ...</h1>
-
-
-<div>Running as <b><?php echo trim(shell_exec('whoami')); ?></b>.</div>
-
-<pre>
 	<?php
 	$requiredBinaries = array('git', 'composer --no-ansi');
-	
-	
-	
-	
-	$path = trim(shell_exec('which git'));
 	foreach ($requiredBinaries as $command) {
 		$path = trim(shell_exec('which '.$command));
 		if ($path == '') {
@@ -46,19 +64,31 @@ ob_start();
 			die(sprintf('<div class="error"><b>%s</b> not available. It needs to be installed on the server for this script to work.</div>', $command));
 		} else {
 			$version = explode("\n", shell_exec($command.' --version'));
-			printf('<b>%s</b> : %s'."\n" , $path , $version[0]
-			);
+			printf('<div><span class="command">%s</span> : <span class="output"> %s</span></div>'."\n" , $path , $version[0]);
 		}
 	}
 	
 	
 	?>
-	</pre>
-<h2 class="text-success">Environment OK.</h2>
-<div>
-	Deploying from <pre><?php echo $cfg['GIT']['path']; ?> <?php echo $cfg['GIT']['branch']."\n"; ?></pre>
+
+	</div>
+	<div class="panel-footer">
+		Deploying from <span class="command"><?php echo $cfg['GIT']['path']; ?></span> branch 
+		<span class="command"><?php echo $cfg['GIT']['branch']."\n"; ?></span>
+	
+	</div>
 </div>
+<div class="panel panel-success">
+	<div class="panel-heading">
+		Environment OK
+	</div>
+
+</div>
+
 <h3>Starting Commands</h3>
+
+
+
 <?php
 // The commands
 $commands = array();
@@ -74,9 +104,11 @@ if (!file_exists($root_folder."\\.git")) {
 	//shell_exec('git stash');
 	//$commands[] = ('git reset --hard HEAD');
 }
+if (!isLocal()){
+	$commands[] = 'git pull https://'.$cfg['GIT']['username'] .':'.$cfg['GIT']['password'] .'@'.$cfg['GIT']['path'] .' ' . $cfg['GIT']['branch'];
+}
 
 
-$commands[] = 'git pull https://'.$cfg['GIT']['username'] .':'.$cfg['GIT']['password'] .'@'.$cfg['GIT']['path'] .' ' . $cfg['GIT']['branch'];
 $commands[] = "git submodule update --init --recursive";
 $commands[] = "composer self-update";
 $commands[] = "composer install";
@@ -88,11 +120,10 @@ foreach ($commands as $command) {
 	exec($command . ' 2>&1', $tmp, $return_code); // Execute the command
 // Output the result
 	printf('
-<span class="prompt">$</span> <span class="command">%s</span>
-<div class="output">%s</div>
+<div class="panel panel-default"><div class="panel-heading">%s</div><div class="panel-body output">%s</div></div>
 '
-			, htmlentities(trim($command))
-			, htmlentities(trim(implode("\n", $tmp)))
+			, replaceSensitive(htmlentities(trim($command)))
+			, replaceSensitive(htmlentities(trim(implode("\n", $tmp))))
 	);
 	$output .= ob_get_contents();
 	ob_flush(); // Try to output everything as it happens
