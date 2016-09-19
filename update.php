@@ -35,7 +35,7 @@ ob_start();
 	<style>
 		.error { color: #c33; }
 		.prompt { color: #6be234; }
-		.command { color: #729fcf; }
+		.command { color: #888888; }
 		.output { color: #999; }
 		.panel-body:empty {
 			display:none;

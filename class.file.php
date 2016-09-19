@@ -4,7 +4,7 @@ class file {
 	private $vars = array();
 	function __construct() {
 		$cfg = array();
-		require_once('_include.php');
+		require_once('_system.php');
 		define( 'ROOT_DIR', $cfg['MEDIA'] );
 	}
 	
