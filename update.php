@@ -16,6 +16,12 @@ ob_start();
 	<meta name="robots" content="noindex">
 	<title>Simple PHP Git deploy script</title>
 	<link rel="stylesheet" href="/ui/style.css">
+	<style>
+		.error { color: #c33; }
+		.prompt { color: #6be234; }
+		.command { color: #729fcf; }
+		.output { color: #999; }
+	</style>
 </head>
 <body>
 
@@ -52,7 +58,7 @@ ob_start();
 <div>
 	Deploying from <pre><?php echo $cfg['GIT']['path']; ?> <?php echo $cfg['GIT']['branch']."\n"; ?></pre>
 </div>
-
+<h3>Starting Commands</h3>
 <?php
 // The commands
 $commands = array();
@@ -70,7 +76,7 @@ if (!file_exists($root_folder."\\.git")) {
 }
 
 
-//$commands[] = 'git pull https://'.$cfg['GIT']['username'] .':'.$cfg['GIT']['password'] .'@'.$cfg['GIT']['path'] .' ' . $cfg['GIT']['branch'];
+$commands[] = 'git pull https://'.$cfg['GIT']['username'] .':'.$cfg['GIT']['password'] .'@'.$cfg['GIT']['path'] .' ' . $cfg['GIT']['branch'];
 $commands[] = "git submodule update --init --recursive";
 $commands[] = "composer self-update";
 $commands[] = "composer install";
