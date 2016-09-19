@@ -128,7 +128,7 @@ foreach ($commands as $command) {
 	);
 	$output .= ob_get_contents();
 	ob_flush(); // Try to output everything as it happens
-	
+	echo "<hr>".$return_code."</hr>";
 	if ($return_code !== 0) {
 		header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', TRUE, 500);
 		printf('
