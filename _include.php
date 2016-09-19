@@ -1,5 +1,5 @@
 <?php
-
+require_once ('inc/functions.php');
 date_default_timezone_set('Africa/Johannesburg');
 setlocale(LC_ALL, 'en_ZA.UTF8');
 $errorFolder = ".". DIRECTORY_SEPARATOR . "logs".DIRECTORY_SEPARATOR. "php";

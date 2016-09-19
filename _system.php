@@ -1,9 +1,9 @@
 <?php
 
 
-require_once('_include.php');
+
 require_once('vendor/autoload.php');
-require_once ('inc/functions.php');
+require_once('_include.php');
 require_once('inc/template.php');
 
 
