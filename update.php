@@ -22,7 +22,8 @@ function replaceSensitive($str) {
 	
 	return $str;
 }
-
+$root_folder = (dirname(__FILE__));
+chdir($root_folder);
 ob_start();
 ?>
 <!DOCTYPE html>
