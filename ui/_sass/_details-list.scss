@@ -1,0 +1,67 @@
+#details-pane {
+
+	#file-list-view-list {
+
+		.table {
+			
+			th {
+				
+				
+				
+				text-shadow   : #ccc;
+				color         : #999;
+				font-weight   : bold;
+				font-size     : 11px;
+			}
+			
+			tbody {
+				tr {
+					
+					
+					&:hover {
+						cursor : pointer;
+						td {
+							
+						}
+					}
+				}
+			}
+			
+		}
+		tbody.folder {
+
+			i.fa-folder {
+				color       : #ffdf4d;
+				text-shadow : -1px -1px 0 #ccc,
+				1px -1px 0 #ccc,
+				-1px 1px 0 #ccc,
+				1px 1px 0 #ccc;
+			}
+			.parent {
+				color:#999;
+			}
+			
+			
+			
+		}
+		
+		.col-icon {
+			width:30px;
+			text-align: center;
+		}
+		.col-name {
+			
+		}
+		.col-type {
+			width:100px;
+			font-size:smaller;
+			color: #737373;
+		}
+		.col-size {
+			color: #737373;
+			width:80px;
+			font-size:smaller;
+		}
+	}
+
+}

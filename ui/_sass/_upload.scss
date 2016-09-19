@@ -1,0 +1,18 @@
+#upload-progress {
+	.progress {
+		margin:0;
+	}
+	#upload-progress-filename {
+		text-align: center;
+		.label {
+			color:#999;
+		}
+		.filename {
+			
+		}
+	}
+	display:none;
+	background-color: #fff;
+	box-shadow: 0 0 10px #ccc;
+	
+}

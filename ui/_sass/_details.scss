@@ -1,0 +1,18 @@
+@import "details-list";
+@import "details-thumbs";
+
+*[data-folder],*[data-view],*[data-file] {
+	cursor:pointer;
+}
+
+#details-pane {
+
+	.selected {
+		box-shadow: 0 0 10px #ccc inset;
+		background-color: #e0e0e0;
+		border-radius: 5px;
+	}
+}
+#details-pane > section {
+	padding-bottom:10px;
+}

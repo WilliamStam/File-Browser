@@ -1,0 +1,619 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "dec7969fd6125097c446079d50dd240a",
+    "content-hash": "27ef6f215dfca04b8cd217722d13f63f",
+    "packages": [
+        {
+            "name": "components/bootstrap",
+            "version": "3.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/bootstrap.git",
+                "reference": "fe6e7683be66ba45a725816efdb51d4566733043"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/bootstrap/zipball/fe6e7683be66ba45a725816efdb51d4566733043",
+                "reference": "fe6e7683be66ba45a725816efdb51d4566733043",
+                "shasum": ""
+            },
+            "require": {
+                "components/jquery": "1.9.1 - 3"
+            },
+            "suggest": {
+                "components/bootstrap-default": "Provide a theme for Bootstrap as components/bootstrap only provides the CSS as file assets"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "js/bootstrap.js"
+                    ],
+                    "files": [
+                        "js/*.js",
+                        "css/*.css",
+                        "css/*.map",
+                        "fonts/*",
+                        "less/mixins/*.less",
+                        "less/*.less"
+                    ],
+                    "shim": {
+                        "deps": [
+                            "jquery"
+                        ]
+                    }
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2016-07-26 05:59:20"
+        },
+        {
+            "name": "components/font-awesome",
+            "version": "4.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/font-awesome.git",
+                "reference": "daa3ef598620217085dcb13ad11149e89a20a925"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/font-awesome/zipball/daa3ef598620217085dcb13ad11149e89a20a925",
+                "reference": "daa3ef598620217085dcb13ad11149e89a20a925",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "styles": [
+                        "css/font-awesome.css"
+                    ],
+                    "files": [
+                        "css/font-awesome.min.css",
+                        "css/font-awesome.css.map",
+                        "fonts/*"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT",
+                "OFL-1.1"
+            ],
+            "description": "The iconic font designed for use with Twitter Bootstrap.",
+            "time": "2016-05-18 10:46:59"
+        },
+        {
+            "name": "components/jQote2",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/aefxx/jQote2",
+                "reference": "origin/master"
+            },
+            "type": "library",
+            "time": "2012-05-04 07:35:41"
+        },
+        {
+            "name": "components/jquery",
+            "version": "3.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/jquery.git",
+                "reference": "39192bee49ceb98f36e9592ee2fc5116a414b6cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/jquery/zipball/39192bee49ceb98f36e9592ee2fc5116a414b6cc",
+                "reference": "39192bee49ceb98f36e9592ee2fc5116a414b6cc",
+                "shasum": ""
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "jquery.js"
+                    ],
+                    "files": [
+                        "jquery.min.js",
+                        "jquery.min.map"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Resig",
+                    "email": "jeresig@gmail.com"
+                }
+            ],
+            "description": "jQuery JavaScript Library",
+            "homepage": "http://jquery.com",
+            "time": "2016-07-08 05:56:55"
+        },
+        {
+            "name": "components/modernizr",
+            "version": "2.8.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/components/modernizr.git",
+                "reference": "4115686a0f488b370b169e5a702d5028e7650bd3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/components/modernizr/zipball/4115686a0f488b370b169e5a702d5028e7650bd3",
+                "reference": "4115686a0f488b370b169e5a702d5028e7650bd3",
+                "shasum": ""
+            },
+            "require": {
+                "robloach/component-installer": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "modernizr.js"
+                    ],
+                    "shim": {
+                        "exports": "window.Modernizr"
+                    }
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Modernizr",
+                    "homepage": "http://Modernizr.com"
+                },
+                {
+                    "name": "Faruk Ates"
+                },
+                {
+                    "name": "Paul Irish"
+                },
+                {
+                    "name": "Alex Sexton"
+                },
+                {
+                    "name": "Ryan Seddon"
+                },
+                {
+                    "name": "Alexander Farkas"
+                },
+                {
+                    "name": "Ben Alman"
+                },
+                {
+                    "name": "Stu Cox"
+                }
+            ],
+            "description": "Modernizr is a JavaScript library that detects HTML5 and CSS3 features in the user's browser.",
+            "homepage": "http://modernizr.com",
+            "keywords": [
+                "CSS3",
+                "HTML5",
+                "browser",
+                "feature detection"
+            ],
+            "time": "2014-10-08 13:59:52"
+        },
+        {
+            "name": "components/toastr",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CodeSeven/toastr",
+                "reference": "origin/master"
+            },
+            "type": "library",
+            "time": "2016-07-27 11:55:41"
+        },
+        {
+            "name": "kriswallsmith/assetic",
+            "version": "v1.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kriswallsmith/assetic.git",
+                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/9928f7c4ad98b234e3559d1049abd13387f86db5",
+                "reference": "9928f7c4ad98b234e3559d1049abd13387f86db5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.1",
+                "symfony/process": "~2.1|~3.0"
+            },
+            "conflict": {
+                "twig/twig": "<1.23"
+            },
+            "require-dev": {
+                "cssmin/cssmin": "3.0.1",
+                "joliclic/javascript-packer": "1.1",
+                "kamicane/packager": "1.0",
+                "leafo/lessphp": "^0.3.7",
+                "leafo/scssphp": "~0.1",
+                "mrclay/minify": "~2.2",
+                "patchwork/jsqueeze": "~1.0|~2.0",
+                "phpunit/phpunit": "~4.8",
+                "psr/log": "~1.0",
+                "ptachoire/cssembed": "~1.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "twig/twig": "~1.8|~2.0"
+            },
+            "suggest": {
+                "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
+                "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
+                "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
+                "patchwork/jsqueeze": "Assetic provides the integration with the JSqueeze JavaScript compressor",
+                "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
+                "twig/twig": "Assetic provides the integration with the Twig templating engine"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Assetic": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kris Wallsmith",
+                    "email": "kris.wallsmith@gmail.com",
+                    "homepage": "http://kriswallsmith.net/"
+                }
+            ],
+            "description": "Asset Management for PHP",
+            "homepage": "https://github.com/kriswallsmith/assetic",
+            "keywords": [
+                "assets",
+                "compression",
+                "minification"
+            ],
+            "time": "2015-11-12 13:51:40"
+        },
+        {
+            "name": "makeusabrew/bootbox",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/makeusabrew/bootbox.git",
+                "reference": "b2671b39f33d0194474060928331742fcf75f776"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/makeusabrew/bootbox/zipball/b2671b39f33d0194474060928331742fcf75f776",
+                "reference": "b2671b39f33d0194474060928331742fcf75f776",
+                "shasum": ""
+            },
+            "require": {
+                "components/bootstrap": "*"
+            },
+            "type": "component",
+            "extra": {
+                "component": {
+                    "scripts": [
+                        "bootbox.js"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Nick Payne",
+                    "email": "nick@kurai.co.uk"
+                }
+            ],
+            "description": "Wrappers for JavaScript alert(), confirm() and other flexible dialogs using the Bootstrap framework",
+            "time": "2015-10-04 19:15:05"
+        },
+        {
+            "name": "moxiecode/plupload",
+            "version": "v2.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/moxiecode/plupload.git",
+                "reference": "13683efad71153d0da606cd0809f21e9e383919f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/moxiecode/plupload/zipball/13683efad71153d0da606cd0809f21e9e383919f",
+                "reference": "13683efad71153d0da606cd0809f21e9e383919f",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "(GPL-2.0 or OEM)"
+            ],
+            "authors": [
+                {
+                    "name": "Davit Barbakadze",
+                    "email": "david@moxiecode.com",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "Plupload is a JavaScript API for dealing with file uploads it supports features like multiple file selection, file type filtering, request chunking, client side image scaling and it uses different runtimes to achieve this such as HTML 5, Silverlight and Flash.",
+            "homepage": "http://plupload.com",
+            "keywords": [
+                "file upload",
+                "legacy browser support",
+                "multi-runtime",
+                "plupload"
+            ],
+            "time": "2016-05-15 10:46:31"
+        },
+        {
+            "name": "robloach/component-installer",
+            "version": "0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RobLoach/component-installer.git",
+                "reference": "908a859aa7c4949ba9ad67091e67bac10b66d3d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/908a859aa7c4949ba9ad67091e67bac10b66d3d7",
+                "reference": "908a859aa7c4949ba9ad67091e67bac10b66d3d7",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0",
+                "kriswallsmith/assetic": "1.*",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "composer/composer": "1.*@alpha",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                },
+                "class": "ComponentInstaller\\ComponentInstallerPlugin"
+            },
+            "autoload": {
+                "psr-0": {
+                    "ComponentInstaller": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Loach",
+                    "homepage": "http://robloach.net"
+                }
+            ],
+            "description": "Allows installation of Components via Composer.",
+            "time": "2015-08-10 12:35:38"
+        },
+        {
+            "name": "symfony/process",
+            "version": "v3.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/process.git",
+                "reference": "e64e93041c80e77197ace5ab9385dedb5a143697"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/process/zipball/e64e93041c80e77197ace5ab9385dedb5a143697",
+                "reference": "e64e93041c80e77197ace5ab9385dedb5a143697",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Process\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Process Component",
+            "homepage": "https://symfony.com",
+            "time": "2016-08-16 14:58:24"
+        },
+        {
+            "name": "twbs/bootstrap-sass",
+            "version": "v3.3.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap-sass.git",
+                "reference": "5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap-sass/zipball/5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47",
+                "reference": "5d6b2ebba0c2a5885ce2f0e01e9218db3d3b5e47",
+                "shasum": ""
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mark Otto"
+                },
+                {
+                    "name": "Thomas McDonald"
+                },
+                {
+                    "name": "Tristan Harward"
+                },
+                {
+                    "name": "Peter Gumeson"
+                },
+                {
+                    "name": "Gleb Mazovetskiy"
+                },
+                {
+                    "name": "Jacob Thornton"
+                }
+            ],
+            "description": "bootstrap-sass is a Sass-powered version of Bootstrap 3, ready to drop right into your Sass powered applications.",
+            "homepage": "http://github.com/twbs/bootstrap-sass",
+            "keywords": [
+                "bootstrap",
+                "css",
+                "sass"
+            ],
+            "time": "2016-07-25 19:58:53"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v1.24.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
+                "reference": "33093f6e310e6976baeac7b14f3a6ec02f2d79b7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.7"
+            },
+            "require-dev": {
+                "symfony/debug": "~2.7",
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.24-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2016-09-01 17:50:53"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "makeusabrew/bootbox": 20,
+        "components/jqote2": 20,
+        "components/toastr": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

@@ -1,0 +1,243 @@
+<script type="text/x-jqote-template" id="template-folders">
+	<![CDATA[
+		<ul>
+			<% for(var i in this.folders){ %>
+			<li>
+				<a href="#folder=<%= this.folders[i].path %>" data-folder="<%= this.folders[i].path %>">
+					<i class="fa fa-folder-o"></i> 
+					<%= this.folders[i].name %>
+					<% if(this.folders[i].contents.files&&this.folders[i].contents.files.length){ %><span class="badge"><%= this.folders[i].contents.files.length %></span><% } %>
+				</a>
+				
+				<%= $.jqote($("#template-folders"),this.folders[i].contents) %>
+				
+			</li>
+			<% } %>
+		</ul>
+	]]>
+</script>
+
+
+<script type="text/x-jqote-template" id="template-folder-thumbs">
+	<![CDATA[
+	
+	<section id="file-list-view-thumbs" >
+	<h5>Folders</h5>
+	<ul class="folder">
+		<% for(var i in this.folders){ %>
+		<li data-folder="<%= this.folders[i].path %>" title="<%= this.folders[i].name %>">
+			<a href="#folder=<%= this.folders[i].path %>">
+				<i class="fa fa-folder"></i>
+				<% if(this.folders[i].contents.files&&this.folders[i].contents.files.length){ %>
+				<span class="label label-default files" title="<%= this.folders[i].contents.files.length %> files"><i class="fa fa-file-o"></i> <%= this.folders[i].contents.files.length %></span>
+				<% } %>
+				<% if(this.folders[i].contents.folders&&this.folders[i].contents.folders.length){ %>
+				<span class="label label-default folders" title="<%= this.folders[i].contents.folders.length %> sub folders"><i class="fa fa-folder-o"></i>  <%= this.folders[i].contents.folders.length %></span>
+				<% } %>
+				<div class="name">
+					<%= this.folders[i].name %>
+				
+				</div>
+			</a>
+		</li>
+		<% } %>
+	</ul>
+	<div class="clearfix"></div>
+	<h5>Files</h5>
+	<ul class="files">
+		<% for(var i in this.files){ %>
+		<li  data-file="<%= this.files[i].name %>" title="<%= this.files[i].name %>">
+			<a href="#file=<%= this.files[i].path %>">
+				<div class="img">
+					<% if(this.files[i].icon=="fa-file-image-o"){ %>
+					<img src="image.php?img_url=<%= Base64.encode("\\"+this.files[i].path) %>&width=100&height=90" />
+					<% } else { %>
+					<i class="fa <%= this.files[i].icon %>"></i>
+					<% } %>
+					
+				</div>
+				<div class="size">
+					<span class="label label-default "><%= this.files[i].size %></span>
+				</div>
+				
+				<div class="name">
+				<%= this.files[i].name %>
+				</div>
+			</a>
+		</li>
+		<% } %>
+	</ul>
+		<div class="clearfix"></div>
+	</section>
+	]]>
+</script>
+
+
+<script type="text/x-jqote-template" id="template-folder-list">
+	<![CDATA[
+	
+	<section id="file-list-view-list" >
+		
+		<table class="table table-condensed table-hover">
+			<thead>
+			<tr>
+				<th class="col-icon"></th>
+				<th class="col-name">Name</th>
+				<th class="col-type">Type</th>
+				<th class="col-size">Size</th>
+				
+			</tr>
+			</thead>
+			<tbody class="folder">
+			<% for(var i in this.folders){ %>
+			<tr data-folder="<%= this.folders[i].path %>">
+				<td class="col-icon"><i class="fa fa-folder"></i></td>
+				<td class="col-name"><%= this.folders[i].name %></td>
+				<td class="col-type" title="">Folder</td>
+				<td class="col-size">
+					<% if(this.folders[i].contents.folders&&this.folders[i].contents.folders.length){ %>
+					<span class="folders" title="<%= this.folders[i].contents.folders.length %> sub folders"><i class="fa fa-folder-o"></i>  <%= this.folders[i].contents.folders.length %></span>
+					<% } %>
+					<% if(this.folders[i].contents.files&&this.folders[i].contents.files.length){ %>
+					<span class="files" title="<%= this.folders[i].contents.files.length %> files"><i class="fa fa-file-o"></i> <%= this.folders[i].contents.files.length %></span>
+					<% } %>
+					
+					
+					
+				</td>
+			</tr>
+			<% } %>
+			</tbody>
+			<tbody class="files">
+			<% for(var i in this.files){ %>
+			<tr  data-file="<%= this.files[i].name %>">
+				<td class="col-icon"><i class="fa <%= this.files[i].icon %>"></i></td>
+				<td class="col-name"><%= this.files[i].name %></td>
+				<td class="col-type"><%= this.files[i].type %></td>
+				<td class="col-size"><%= this.files[i].size %></td>
+			</tr>
+			<% } %>
+			</tbody>
+		</table>
+		<div class="clearfix"></div>
+		
+	</section>
+	
+	
+	]]>
+</script>
+
+
+
+<script type="text/x-jqote-template" id="template-li-parent-folder-thumbs">
+	<![CDATA[
+	
+	<% if(this.parent){ %>
+	<li class="parent">
+		<a href="" data-folder="<%= this.parent %>">
+			<i class="fa fa-angle-double-left "></i>
+			<div class="name">
+				parent folder
+			</div>
+		</a>
+	</li>
+	<% } %>
+	
+	]]>
+</script>
+
+<script type="text/x-jqote-template" id="template-li-parent-folder-list">
+	<![CDATA[
+	
+	<% if(this.parent){ %>
+	<tr  data-folder="<%= this.parent %>" class="parent">
+		<td><i class="fa fa-level-up"></i></td>
+		<td>parent folder</td>
+		<td></td>
+		<td></td>
+	</tr>
+	
+	<% } %>
+	
+	]]>
+</script>
+<script type="text/x-jqote-template" id="template-breadcrumbs">
+	<![CDATA[
+	
+		<% for (var i in this.breadcrumbs){ %>
+			<% if(i == this.breadcrumbs.length -1){ %>
+				<li class="active"><%= this.breadcrumbs[i].label %></li>
+			<% } else { %>
+				<li><a href="#" data-folder="<%= this.breadcrumbs[i].path %>"><%= this.breadcrumbs[i].label %></a></li>
+			<% } %>
+		<% } %>
+		
+	]]>
+</script>
+
+
+
+<script type="text/x-jqote-template" id="template-controls">
+	<![CDATA[
+	
+	
+	<div class="btn-toolbar" data-control-folder="<%= this.settings.folder_name %>" data-control-path="<%= this.settings.folder %>">
+		<div class="btn-group pull-left">
+			<% if (this.settings.folder && this.settings.folder!="\\"){ %>
+			<button type="button" class="btn btn-xs btn-warning control-folder-delete"><i class="fa fa-trash"></i> Delete</button>
+			<button type="button" class="btn btn-xs btn-warning control-folder-rename"><i class="fa fa-i-cursor"></i> Rename</button>
+			<% } %>
+			<button type="button" class="btn btn-xs btn-warning control-folder-new"><i class="fa fa-plus"></i> New Folder</button>
+		</div>
+		<div class="title">
+			<h4>- <i class="fa fa-folder-o"></i> Folder -</h4>
+		</div>
+	</div>
+	
+	<% if (this.settings.file){ %>
+	<div class="btn-toolbar" data-control-file="<%= this.settings.file %>"  data-control-path="<%= this.settings.folder %>">
+		<div class="btn-group pull-left">
+			<button type="button" class="btn btn-xs btn-info control-file-delete"><i class="fa fa-trash"></i> Delete</button>
+			<button type="button" class="btn btn-xs btn-info control-file-rename"><i class="fa fa-i-cursor"></i> Rename</button>
+		</div>
+		<div class="title">
+			<h4>- <i class="fa fa-file-o"></i> File -</h4>
+		</div>
+	</div>
+	<% } %>
+	
+	]]>
+</script>
+
+
+<script type="text/x-jqote-template" id="template-modal-controls-delete">
+	<![CDATA[
+	
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">
+					Delete 
+					<%= this.type %>
+					
+				</h4>
+			</div>
+			<div class="modal-body">
+				<% console.log(this); %>
+				<p>
+					Are you sure you want to remove this <%= this.type %>?
+				</p>
+				<p>
+					<%= this.type %>: <%= this.label %>
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-danger">Delete - Permanent</button>
+			</div>
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+	
+	]]>
+</script>

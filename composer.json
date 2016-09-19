@@ -1,0 +1,54 @@
+{
+  "name": "WilliamStam/File-Browser",
+  "description": "File Browser",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "William Stam",
+      "email": "william@impreshin.com"
+    }
+  ],
+  "config": {
+    "optimize-autoloader": true
+  },
+  "repositories": [
+    
+    {
+      "type": "package",
+      "package": {
+        "name": "components/jQote2",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/aefxx/jQote2",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    }
+  ,
+    {
+      "type": "package",
+      "package": {
+        "name": "components/toastr",
+        "version": "dev-master",
+        "source": {
+          "url": "https://github.com/CodeSeven/toastr",
+          "type": "git",
+          "reference": "origin/master"
+        }
+      }
+    }
+  ],
+  "require": {
+    "makeusabrew/bootbox": "dev-master",
+    "components/jquery": "3.*",
+    "twbs/bootstrap-sass": "3.*",
+    "twig/twig": "*",
+    "moxiecode/plupload": "2.*",
+    "components/modernizr": "*",
+    "components/Font-Awesome": "4.*",
+    "components/jQote2": "dev-master",
+    "components/toastr":"dev-master"
+  }
+}
