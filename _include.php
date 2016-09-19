@@ -26,7 +26,7 @@ $cfg = array();
 $cfg['GIT'] = array(
 		'username'=>"",
 		"password"=>"",
-		"path"=>"github.com/Impreshin/File-Browser",
+		"path"=>"github.com/WilliamStam/File-Browser",
 		"branch"=>"master"
 );
 
