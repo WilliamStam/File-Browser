@@ -60,6 +60,7 @@ ob_start();
 	$requiredBinaries = array('git', 'composer --no-ansi');
 	foreach ($requiredBinaries as $command) {
 		$path = trim(shell_exec('which '.$command));
+		echo $path;
 		if ($path == '') {
 			header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
 			die(sprintf('<div class="error"><b>%s</b> not available. It needs to be installed on the server for this script to work.</div>', $command));
