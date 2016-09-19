@@ -57,16 +57,15 @@ ob_start();
 		
 
 	<?php
-	$requiredBinaries = array('git', 'composer --no-ansi');
+	$requiredBinaries = array('git --version', 'composer --version');
 	foreach ($requiredBinaries as $command) {
-		$path = trim(shell_exec('which '.$command));
-		echo $path;
+		$path = trim(shell_exec(''.$command));
 		if ($path == '') {
 			header($_SERVER['SERVER_PROTOCOL'] . ' 500 Internal Server Error', true, 500);
 			die(sprintf('<div class="error"><b>%s</b> not available. It needs to be installed on the server for this script to work.</div>', $command));
 		} else {
 			$version = explode("\n", shell_exec($command.' --version'));
-			printf('<div><span class="command">%s</span> : <span class="output"> %s</span></div>'."\n" , $path , $version[0]);
+			printf('<div><span class="command">%s</span></div>'."\n" , $path);
 		}
 	}
 	
